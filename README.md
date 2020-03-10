@@ -16,6 +16,3 @@
 
 ## Built With
 - #### [Xamarin.Android](https://docs.microsoft.com/en-us/xamarin/android/) - exposes the complete Android SDK for .NET developers. Build fully native Android apps using C# or F# in Visual Studio.
-
-
-[![website](https://i.hizliresim.com/oEeQka.png)](https://mestuyilmaz.github.io)
