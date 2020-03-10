@@ -20,7 +20,7 @@ namespace WhatsAppUI
         EditText messageEdit;
         ListView _listViewChat;
         public static List<string> listChat = new List<string>();
-        private int progressBarStatus = 0;
+
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -48,6 +48,7 @@ namespace WhatsAppUI
                 _listViewChat.Adapter = new MyListViewAdapterForChat(this, ChatActivity.listChat);
             }
 
+
             buttonSend = FindViewById<Button>(Resource.Id.buttonSend);
             buttonSend.Click += ButtonSend_Click;
 
@@ -60,29 +61,15 @@ namespace WhatsAppUI
 
             messageEdit = FindViewById<EditText>(Resource.Id.messageEdit);
 
-            if (progressBarStatus != 10)
-            {
-                var progressBar = FindViewById<ProgressBar>(Resource.Id.progressBar);
-                progressBar.Max = 10;
-                progressBar.Progress = 0;
-                progressBarStatus += 1;
-                progressBar.Progress += progressBarStatus;
+            contact.TextMessage.Add(messageEdit.Text);
+            listChat = contact.TextMessage;
 
-                contact.TextMessage.Add(messageEdit.Text);
-                listChat = contact.TextMessage;
+            _listViewChat = FindViewById<ListView>(Resource.Id.messagesContainer);
+            _listViewChat.Adapter = new MyListViewAdapterForChat(this, ChatActivity.listChat);
 
-                _listViewChat = FindViewById<ListView>(Resource.Id.messagesContainer);
-                _listViewChat.Adapter = new MyListViewAdapterForChat(this, ChatActivity.listChat);
+            messageEdit.Text = "";
 
-                messageEdit.Text = "";
-
-            }
-
-            else
-            {
-                Toast.MakeText(this, "Sorry, out of message limit", ToastLength.Short).Show();
-                messageEdit.Text = "";
-            }
+            //Toast.MakeText(this, contac.TextMessage[0], ToastLength.Short).Show();
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)

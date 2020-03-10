@@ -38,7 +38,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Bruce Robbo"
-                android:textColor="#25D366"
                 android:textSize="24dp"
                 android:textStyle="bold"
                 android:layout_gravity="left|bottom"
@@ -171,7 +170,7 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="@color/material_grey_800"
+                    android:background="@android:color/darker_gray"
                     android:layout_marginTop="6dp"/>
 
                 <LinearLayout

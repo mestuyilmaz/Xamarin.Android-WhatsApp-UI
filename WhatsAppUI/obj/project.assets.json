@@ -1944,11 +1944,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Mesut\\Desktop\\Xamarin.Android-WhatsApp-UI-update\\WhatsAppUI\\WhatsAppUI.csproj",
+      "projectUniqueName": "C:\\Users\\Mesut\\Desktop\\Xamarin.Android-WhatsApp-UI-master\\WhatsAppUI\\WhatsAppUI.csproj",
       "projectName": "WhatsAppUI",
-      "projectPath": "C:\\Users\\Mesut\\Desktop\\Xamarin.Android-WhatsApp-UI-update\\WhatsAppUI\\WhatsAppUI.csproj",
+      "projectPath": "C:\\Users\\Mesut\\Desktop\\Xamarin.Android-WhatsApp-UI-master\\WhatsAppUI\\WhatsAppUI.csproj",
       "packagesPath": "C:\\Users\\Mesut\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Mesut\\Desktop\\Xamarin.Android-WhatsApp-UI-update\\WhatsAppUI\\obj\\",
+      "outputPath": "C:\\Users\\Mesut\\Desktop\\Xamarin.Android-WhatsApp-UI-master\\WhatsAppUI\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [

@@ -34,10 +34,10 @@ namespace WhatsAppUI
         {
             return position;
         }
-        /*public void Update()
+        public void Update()
         {
             NotifyDataSetChanged();
-        }*/
+        }
 
         public override View GetView(int position, View convertView, ViewGroup parent)
         {

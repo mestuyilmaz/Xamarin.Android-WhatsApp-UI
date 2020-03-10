@@ -29,13 +29,20 @@ namespace WhatsAppUI
             SetSupportActionBar(toolbar);
             SupportActionBar.Title = "Whatsapp++";
 
+
+
             list.Add(new Contact("Taylor LaShae", Resources.GetDrawable(Resource.Drawable.pp1)));
             list.Add(new Contact("Jorah Mormont", Resources.GetDrawable(Resource.Drawable.pp2)));
 
             _listView = FindViewById<ListView>(Resource.Id.customListView);
-            _listView.Adapter = new MyListViewAdapter(this, MainActivity.list);
+            var mAdapter = new MyListViewAdapter(this, MainActivity.list);
+            _listView.Adapter = mAdapter;
+            mAdapter.Update();
+            RunOnUiThread(() => mAdapter.NotifyDataSetChanged());
 
             _listView.ItemClick += _listView_ItemClick;
+
+
 
             fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
             fab.Click += Fab_Click;

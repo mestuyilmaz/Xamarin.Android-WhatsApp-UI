@@ -16,22 +16,13 @@
         android:padding="20dp"
         android:background="@drawable/bg_chat">
 
-        <ProgressBar
-            android:id="@+id/progressBar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:progress="0"
-            android:layout_above="@id/messageEdit"
-            android:layout_marginBottom="10dp"
-            style="@style/Widget.AppCompat.ProgressBar.Horizontal"/>
-
         <EditText
             android:id="@+id/messageEdit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginRight="60dp"
             android:layout_alignParentBottom="true"
-            android:layout_toLeftOf="@+id/buttonSend"
+            android:layout_toLeftOf="@+id/chatSendButton"
             android:autoText="true"
             android:textColor="@android:color/black"
             android:hint="Type a message"
@@ -58,6 +49,7 @@
             android:layout_alignParentTop="false"
             android:layout_marginBottom="20dp"
             android:layout_above="@+id/messageEdit"
+            android:layout_below="@+id/meLbl"
             android:layout_marginTop="10dp"
             android:listSelector="@android:color/transparent"
             android:transcriptMode="alwaysScroll"

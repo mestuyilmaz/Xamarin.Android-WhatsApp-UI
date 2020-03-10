@@ -20,6 +20,8 @@ namespace WhatsAppUI
     [Activity(Label = "AddContactActivity")]
     public class AddContactActivity : AppCompatActivity
     {
+        ListView _listViewAvatar;
+        public static List<Drawable> listAvatar = new List<Drawable>();
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -37,10 +39,31 @@ namespace WhatsAppUI
 
             var inputName = FindViewById<EditText>(Resource.Id.inputName);
 
+            listAvatar.Clear();
+            listAvatar.Add(Resources.GetDrawable(Resource.Drawable.pp0));
+            listAvatar.Add(Resources.GetDrawable(Resource.Drawable.pp1));
+            listAvatar.Add(Resources.GetDrawable(Resource.Drawable.pp2));
+            listAvatar.Add(Resources.GetDrawable(Resource.Drawable.pp3));
+
+            _listViewAvatar = FindViewById<ListView>(Resource.Id.listview_avatar);
+            _listViewAvatar.Adapter = new MyListViewAdapterForAvatar(this, AddContactActivity.listAvatar);
+            _listViewAvatar.ItemClick += _listViewAvatar_ItemClick;
+
             FindViewById<Button>(Resource.Id.addButton).Click += OnAddClick;
             FindViewById<Button>(Resource.Id.cancelButton).Click += OnCancelClick;
         }
 
+        public void _listViewAvatar_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
+        {
+            var intent = new Intent(this, typeof(MainActivity));
+            intent.PutExtra("SelectedImage", e.Position);
+
+            e.View.SetBackgroundResource(Resource.Drawable.imageview_border);
+
+            var position = e.Position;
+
+            RunOnUiThread(() => MainActivity.list.Add(new Contact(listAvatar[position])));
+        }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
         {

@@ -66,6 +66,7 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="ChatActivity.cs" />
     <Compile Include="MyListViewAdapter.cs" />
+    <Compile Include="MyListViewAdapterForAvatar.cs" />
     <Compile Include="MyListViewAdapterForChat.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -451,6 +452,16 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\bg_button_cancel.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\imageview_border.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\listview_row_avatar.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
